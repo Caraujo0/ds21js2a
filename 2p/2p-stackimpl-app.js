@@ -1,45 +1,45 @@
 //* PROBLEM 1
  //* Stack implementation
  
-   class stack{
-   constructor(){
-   this.stack={};
-     this.count=0;
-   }
-   
-  push(element){
-  this.stack[this.count]=element;
-    this.count++;
-    return this.stack;
-  }
-  pop(){
-  this.count--;
-    const element=this.stack[this.count];
-    delete this.stack[this.count];
-    return element;
-  }
-  peek(){
-  return this.stack[this.count-1];
-  }
-  size(){
-  return this.count;
-  }
-  print(){
-  console.log(this.stack);
-  }
+    function Stack() {
+this.dataStore = [];
+this.top = 0;
+this.push = push;
+this.pop = pop;
+this.peek = peek;
+this.clear = clear;
+this.length = length;
 }
+  function push(element) {
+this.dataStore[this.top++] = element;
+}
+function peek() {
+return this.dataStore[this.top-1];
+}
+function pop() {
+return this.dataStore[--this.top];
+}
+function clear() {
+this.top = 0;
+}
+function length() {
+return this.top;
+}
+var s = new Stack();
+s.push("David");
+s.push("Raymond");
+s.push("Bryan");
+console.log("length: " + s.length());
+console.log(s.peek());
+var popped = s.pop();
+console.log("The popped element is: " + popped);
+console.log(s.peek());
+s.push("Cynthia");
+console.log(s.peek());
+s.clear();
+console.log("length: " + s.length());
+console.log(s.peek());
+s.push("Clayton");
+console.log(s.peek());
   
- const stack= new stack();
-  console.log(stacks.size());
-  console.log(stack.push(' Cesar Araujo '));
-  console.log(stack.size());
-  console.log(stack.peek());
-  console.log(stack.push(' The student '));
-  console.log(stack.size());
-  stack.print();
-  console.log(stack.peek());
-  console.log(stack.pop());
-  stack.print();
-  console.log(stack.size());
-  console.log(stack.peek());
   
