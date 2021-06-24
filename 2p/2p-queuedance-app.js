@@ -1,81 +1,115 @@
  // PROBLEM 2
   //Square Dance
+  function Dancer(name, sex) {
+this.name = name;
+  this.sex = sex;
+}
+  function getDancers(males, females) {
+var names =["F Allison McMillan","M Frank Opitz",
+"M Mason McMillan","M Clayton Ruff","F Cheryl Ferenback"," M Raymond Williams","F Jennifer Ingram","M Bryan Frazer","M David Durr","M Danny Martin","F Aurora Adney"];
+for (var i = 0; i < names.length; ++i) {
+names[i] = names[i].trim();
+}
+for (var i = 0; i < names.length; ++i) {
+var dancer = names[i].split(" ");
+var sex = dDancer[0];
+var name = dDancer[1];
+if (sex == "F") {
+females.enqueue(new Dancer(name, sex));
+}
+else {
+males.enqueue(new Dancer(name, sex));
+}
+}
+}
+  function dance(males, females) {
+while (!females.empty() && !males.empty()) {
+person = females.dequeue();
+console.log("Female dancer is: " + person.name);
+person = males.dequeue();
+console.log(" and the male dancer is: " + person.name);
+}
+console.log();
+}
   function Queue() {
-    this.datostore = [];
-    this.enqueue = enqueue;
-    this.dequeue = dequeue;
-    this.front = front;
-    this.back = back;
-    this.toString = toString;
-       this.empty = empty;
-    }
-    function enqueue(element) {
-    this.datostore.push(element);
-    }
-    function dequeue() {
-    return this.datostore.shift();
-    }
-    function front() {
-    return this.datostore[0];
-    }
-    function back() {
-    return this.datostore[this.datostore.length-1];
-    }
-    function toString() {
-    var restr = "";
-    for (let i = 0; i < this.datostore.length; ++i) {
-    restr += this.datostore[i] + "<br>";
-    }
-    return restr;
-    }
-    function empty() {
-    if (this.datostore.length == 0) {
-    return true;
-    }
-    else {
-    return false;
-    }
-    }
-    function dancer(nombre,sexo) {
-    this.nombre = nombre;
-    this.sexo= sexo;
-    }
-    function getdancers(hombres,mujeres) {
-    let nombres = read("dancers.txt").split("<br>");
-    for (let i = 0; i < nombres.length; ++i) {
-    nombres[i] = nombres[i].trim();
-    }
-    for (let i = 0; i < nombres.length; ++i) {
-    let dancer = nombres[i].split(" ");
-    let sex = dancer[0];
-    var nombre = dancer[1];
-    if (sex == "M") {
-    femaleDancers.enqueue(new Dancer(nombre, sexo));
-    }
-    else {
-    maleDancers.enqueue(new Dancer(nombre, sexo));
-    }
-    }
-    }
-    function dance(hombres,mujeres) {
-    print("The dance partners are: " +"<br>");
-    while (!mujeres.empty() && !hombres.empty()) {
-    person = mujeres.dequeue();
-    putstr("mujer dancer is: " + person.nombre);
-    person = hombres.dequeue();
-    print(" and the hombre dancer is: " + person.nombre);
-    }
-    print();
-    }
-    
-    let maleDancers = new Queue();
-    let femaleDancers = new Queue();
-    getDancers(maleDancers, femaleDancers);
-    dance(maleDancers, femaleDancers);
-    if (!femaleDancers.empty()) {
-    console.log(femaleDancers.front().nombre + " is waiting to dance.");
-    }
-    if (!maleDancers.empty()) {
-    console.log(maleDancers.front().nombre + " is waiting to dance.");
-    }
-     
+this.dataStore = [];
+this.enqueue = enqueue;
+this.dequeue = dequeue;
+this.front = front;
+this.back = back;
+this.toString = toString;
+    this.empty = empty;
+}
+function enqueue(element) {
+this.dataStore.push(element);
+}
+function dequeue() {
+return this.dataStore.shift();
+}
+function front() {
+return this.dataStore[0];
+}
+function back() {
+return this.dataStore[this.dataStore.length-1];
+}
+function toString() {
+var retStr = "";
+for (var i = 0; i < this.dataStore.length; ++i) {
+retStr += this.dataStore[i] + "\n";
+}
+return retStr;
+}
+function empty() {
+if (this.dataStore.length == 0) {
+return true;
+}
+else {
+return false;
+}
+}
+function Dancer(name, sex) {
+this.name = name;
+this.sex = sex;
+}
+function getDancers(males, females) {
+var names =["F Allison McMillan","M Frank Opitz",
+"M Mason McMillan","M Clayton Ruff","F Cheryl Ferenback"," MRaymond Williams","F Jennifer Ingram","M Bryan Frazer","M David Durr","M Danny Martin","F Aurora Adney"]
+for (var i = 0; i < names.length; ++i) {
+names[i] = names[i].trim();
+}
+for (var i = 0; i < names.length; ++i) {
+var dancer = names[i].split(" ");
+var sex = dancer[0];
+var name = dancer[1];
+if (sex == "F") {
+femaleDancers.enqueue(new Dancer(name, sex));
+  }
+else {
+maleDancers.enqueue(new Dancer(name, sex));
+}
+}
+}
+function dance(males, females) {
+while (!females.empty() && !males.empty()) {
+person = females.dequeue();
+console.log("Female dancer is: " + person.name);
+person = males.dequeue();
+console.log(" and the male dancer is: " + person.name);
+}
+console.log();
+}
+// test program
+var maleDancers = new Queue();
+var femaleDancers = new Queue();
+getDancers(maleDancers, femaleDancers);
+dance(maleDancers, femaleDancers);
+if (!femaleDancers.empty()) {
+console.log(femaleDancers.front().name + " is waiting to dance.");
+}
+if (!maleDancers.empty()) {
+console.log(maleDancers.front().name + " is waiting to dance.");
+}
+else{
+console.log(maleDancers.front().name + " is dancing with "+femaleDancers.front().name);
+}
+  
