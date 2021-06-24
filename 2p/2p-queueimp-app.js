@@ -1,7 +1,7 @@
 // * PROBLEM 1
  //* Queue implementation
  
- function queue(){
+  function queue(){
     this.datostore=[];
        this.enqueue=enqueue;
        this.dequeue=dequeue;
@@ -21,7 +21,8 @@
       return this.datostore[0];
       }
       function back(){
-      return this.datostore[this.datostore.lenght-1];
+      let a=this.datostore.length;
+      return this.datostore[a-1];
       }
       function toString(){
       let restr="";
@@ -40,12 +41,12 @@
       }
       
       let e= new queue();
-      e.enqueue(" César ");
-      e.enqueue(" Karina ");
-      e.enqueue(" Brandon ");
+      e.enqueue(" Rene ");
+      e.enqueue(" Cricel ");
+      e.enqueue(" Mario ");
+  		e.enqueue(" Cesar ");
+  
       console.log(e.toString());
-      e.dequeue();
-      console.log(e.toString());
-      e.dequeue();
+      console.log(e.toString());				
       console.log(" Front of queue: " + e.front());
       console.log(" Back of queue: " + e.back());
