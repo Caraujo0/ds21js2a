@@ -26,9 +26,9 @@ function length() {
 return this.top;
 }
 var s = new Stack();
-s.push("David");
-s.push("Raymond");
-s.push("Bryan");
+s.push("César");
+s.push("Karina");
+s.push("Brandon");
 console.log("length: " + s.length());
 console.log(s.peek());
 var popped = s.pop();
