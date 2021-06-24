@@ -1,77 +1,137 @@
-//PROBLEM 1
-
- class Node{
- constructor(data,next){
- this.data=data;
- this.next=next;
- }
-}
- class Linkedlist{
- constructor(){
- this.head=null;
- this.size=0;
- }
- }
- add(data)
- const newNode= new Node(data, null);
- if(!this.head){
- this.head=newNode
- }
- else{
- let current= this.head;
- while(current.next){
- current=current.next;
- }
- current.next=newNode;
- }
- this.size++;
- 
- const linkedList=new Linkedlist();
- console.log(Linkedlist);
- linkedList.add(12);
- console.log(linkedList);
- linkedList(99);
-
- // * PROBLEM 2
-
- linkedList.prototype.size=function(){
- this.size=0;
- let nodoActual=this.head;
- while(nodoActual){
- this.size++;
- nodoActual=nodoActual.next
- }
- return this.size;
- }
- let lista=new linkedList();
- lista.add(1);
- lista.add(2);
- lista.add(3);
- lista.add(50);
- lista.add(20);
- lista.add(520);
- console.log(lista.size());
-
- // * PROBLEM 3
- function removeFrom(index){
- if(index<0|| index>this.size)
- return null;
- }
- let current=this.head;
- let previous=null;
- if(inex===0){
- this.head=curren.next;
- }else{
- for(let i=0;i<index;i++){
- previous=null;
- current=current.next;
- }
- previous.next=current.next;
- }
-
- this.size--;
- return current.data;
- 
- console.log(linkedList.removefrom());
- console.log(linkedList.print())
+  //PROBLEM 1
+function Node(element) {
+    this.element = element;
+    this.next = null;
+    }
+function LList() {
+    this.head = new Node("head");
+    this.find = find;
+    this.insert = insert;
+    this.display = display;
+    }
+function find(item) {
+    let currNode = this.head;
+    while (currNode.element != item) {
+    currNode = currNode.next;
+    }
+    return currNode;
+    }
+function insert(newElement, item) {
+    let newNode = new Node(newElement);
+    let  current = this.find(item);
+    newNode.next = current.next;
+    current.next = newNode;
+    }
+function display() {
+    let currNode = this.head;
+    while (!(currNode.next == null)) {
+    console.log(currNode.next.element);
+    currNode = currNode.next;
+    }
+    } 
+  //PROBLEM 2
+  function Node(element) {
+    this.element = element;
+    this.next = null;
+    }
+function LList() {
+    this.head = new Node("head");
+    this.find = find;
+    this.insert = insert;
+    this.display = display;
+    this.findPrevious = findPrevious;
+    this.remove = remove;
+    }
+function findPrevious(item) {
+    let currNode = this.head;
+    while (!(currNode.next == null) &&
+    (currNode.next.element != item)) {
+    currNode = currNode.next;
+    }
+    return currNode;
+    } 
+function remove(item) {
+    let prevNode = this.findPrevious(item);
+    if (!(prevNode.next == null)) {
+    prevNode.next = prevNode.next.next;
+    }
+    }  
+function find(item) {
+    let currNode = this.head;
+    while (currNode.element != item) {
+    currNode = currNode.next;
+    }
+    return currNode;
+    }
+function insert(newElement, item) {
+    let newNode = new Node(newElement);
+    let  current = this.find(item);
+    newNode.next = current.next;
+    current.next = newNode;
+    }
+function display() {
+    let currNode = this.head;
+    while (!(currNode.next == null)) {
+    console.log(currNode.next.element);
+    currNode = currNode.next;
+    }
+    } 
+  
+  //PROBLEM 3
+  function Node(element) {
+    this.element = element;
+    this.next = null;
+    }
+function LList() {
+    this.head = new Node("head");
+    this.find = find;
+    this.insert = insert;
+    this.display = display;
+    this.findPrevious = findPrevious;
+    this.remove = remove;
+    }
+function findPrevious(item) {
+    let currNode = this.head;
+    while (!(currNode.next == null) &&
+    (currNode.next.element != item)) {
+    currNode = currNode.next;
+    }
+    return currNode;
+    } 
+function remove(item) {
+    let prevNode = this.findPrevious(item);
+    if (!(prevNode.next == null)) {
+    prevNode.next = prevNode.next.next;
+    }
+    }  
+function find(item) {
+    let currNode = this.head;
+    while (currNode.element != item) {
+    currNode = currNode.next;
+    }
+    return currNode;
+    }
+function insert(newElement, item) {
+    let newNode = new Node(newElement);
+    let  current = this.find(item);
+    newNode.next = current.next;
+    current.next = newNode;
+    }
+function display() {
+    let currNode = this.head;
+    while (!(currNode.next == null)) {
+    console.log(currNode.next.element);
+    currNode = currNode.next;
+    }
+    } 
+let nums = new LList();
+    nums.insert(9, "head");
+    nums.insert(4, 9);
+    nums.insert(6, 4);
+    nums.insert(3, 6); 
+   
+    nums.display();
+    console.log();
+    nums.remove(4);
+    nums.display();
  
